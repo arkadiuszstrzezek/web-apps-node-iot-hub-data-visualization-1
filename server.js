@@ -10,7 +10,7 @@ const eventHubConsumerGroup = process.env.EventHubConsumerGroup;
 // Redirect requests to the public subdirectory to the root
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
-app.use((req, res) => {
+app.use((req, res /* , next */) => {
   res.redirect('/');
 });
 
